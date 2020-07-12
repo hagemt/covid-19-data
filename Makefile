@@ -3,7 +3,7 @@ PYTHON3 := $(shell command -v python3)
 
 default: jhu.gif
 	# run w/ BROWSER= path to application that opens GIFs
-	@open -a "$(BROWSER)" --args "file://$(shell pwd)/$<"
+	open -a "$(BROWSER)" --args "file://$(shell pwd)/$<"
 .PHONY: default
 
 data: sane
