@@ -1,0 +1,57 @@
+A+ Arizona
+A+ Delaware
+A+ Indiana
+A+ Iowa
+A+ Kansas
+A+ Maine
+A+ Massachusetts
+A+ Michigan
+A+ Mississippi
+A+ Nevada
+A+ New Jersey
+A+ North Carolina
+A+ Oklahoma
+A+ Oregon
+A+ Pennsylvania
+A+ Rhode Island
+A+ South Carolina
+A+ Utah
+A+ Virginia
+A+ Wisconsin
+A  Alaska
+A  Arkansas
+A  Colorado
+A  Florida
+A  Georgia
+A  Idaho
+A  Illinois
+A  Louisiana
+A  Maryland
+A  Minnesota
+A  Nebraska
+A  New York
+A  South Dakota
+A  Tennessee
+A  Texas
+B  Alabama
+B  California
+B  Kentucky
+B  Missouri
+B  New Hampshire
+B  New Mexico
+B  Ohio
+B  Vermont
+B  Washington
+B  West Virginia
+B  Wyoming
+C  Connecticut
+C  Hawaii
+C  Montana
+C  North Dakota
+
+A+ DC
+B  Guam
+B  Puerto Rico
+C  American Samoa
+C  US Virgin Islands
+D  N Mariana Islands
