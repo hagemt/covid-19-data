@@ -2,7 +2,9 @@
 
 Pulls current data summary (images) for all fifty states from John Hopkins.
 
-![Example Output](2020-07-11.gif)
+Example output from 2020-08-08 run:
+
+![Example Output](2020-08-08.gif)
 
 ## Development
 

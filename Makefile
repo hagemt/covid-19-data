@@ -27,6 +27,10 @@ data: sane
 	"$(PYTHON3)" jhu.py data
 	#find data -name '*.png' -print0 | xargs -0 open
 
+docs:
+	npx @tilecloud/mdhtml README.md -t template.html -o docs/index.html
+.PHONY: docs
+
 sane:
 	[[ -x "$(PYTHON3)" ]] # run w/ PYTHON3= path to python v3.2+
 	"$(PYTHON3)" -c 'import imageio, requests' \
