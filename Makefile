@@ -1,8 +1,8 @@
 BROWSER := /Applications/Google Chrome.app
 PYTHON3 := $(shell command -v python3)
 
-DATA_URL := https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/2/query
-DATA_URI := f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Confirmed%20desc&resultOffset=0&resultRecordCount=250&cacheHint=true
+JQ_PARAM := spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Confirmed%20desc&resultOffset=0&resultRecordCount=250&cacheHint=true
+JSON_URL := https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/2/query?f=json&where=1%3D1&$(JQ_PARAM)
 
 default: help
 .PHONY: default
@@ -22,7 +22,7 @@ demo: jhu.gif
 
 json:
 	# render per-country JSON data from JHU via PHP + Esri format:
-	mkdir -p esri && curl -s "$(DATA_URL)?$(DATA_URI)" \
+	mkdir -p esri && curl -s "$(JSON_URL)" \
 		| jq . > "esri/ncov-data-$(shell date +%s).json"
 	cd esri; php -f index.php > ../docs/esri.html
 	#cd esri; php -S localhost:9001

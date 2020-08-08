@@ -13,7 +13,7 @@ td, th {
 <body>
 
 <?php
-$file = "example-ncov-data.json"; // from 1596918893000=2020-08-08T20:34:53.000Z
+$file = "example-ncov-data.json"; // from 1596928122000=2020-08-08T23:08:42.000Z
 $when = strcmp($file, "example-ncov-data.json") !== 0 ? "latest" : "2020-08-08";
 
 $json = file_get_contents($file); // array
