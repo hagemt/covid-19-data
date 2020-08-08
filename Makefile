@@ -21,8 +21,11 @@ demo: jhu.gif
 .PHONY: demo
 
 json:
+	# render per-country JSON data from JHU via PHP + Esri format:
 	mkdir -p esri && curl -s "$(DATA_URL)?$(DATA_URI)" \
 		| jq . > "esri/ncov-data-$(shell date +%s).json"
+	cd esri; php -f index.php > ../docs/esri.html
+	#cd esri; php -S localhost:9001
 .PHONY: json
 
 recalls: #sane
