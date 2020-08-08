@@ -13,7 +13,9 @@ Uses `Makefile` to drive `PYTHON3 ?= $(shell command -v python3)`.
 See `make` output, or read `.py` file(s) for more data.
 
 Targets include:
-* demo
-* recalls
+
+* `make demo # for jhu.gif`
+* `make json # esri/*.json`
+* `make recalls # from FDA`
 
 The `docs` folder is hosted on: https://hagemt.github.io/covid-19-data

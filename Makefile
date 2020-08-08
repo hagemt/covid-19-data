@@ -25,29 +25,29 @@ json:
 	mkdir -p esri && curl -s "$(JSON_URL)" \
 		| jq . > "esri/ncov-data-$(shell date +%s).json"
 	cd esri; php -f index.php > ../docs/esri.html
-	#cd esri; php -S localhost:9001
 .PHONY: json
 
-recalls: #sane
+recalls:
 	[[ -x "$(PYTHON3)" ]] # run w/ PYTHON3= path to python v3.2+
 	@"$(PYTHON3)" -c 'import pandas, matplotlib' \
 		|| "$(PYTHON3)" -m pip install --user pandas matplotlib -U
 	@"$(PYTHON3)" fda.py recalls
 .PHONY: recalls
 
-data: sane
-	"$(PYTHON3)" jhu.py data
-	#find data -name '*.png' -print0 | xargs -0 open
-
-docs:
+html:
+	# FIXME: this tool worked once, but I want to find a better alternative
 	npx @tilecloud/mdhtml README.md -t template.html -o docs/index.html
-.PHONY: docs
+.PHONY: html
 
 sane:
 	[[ -x "$(PYTHON3)" ]] # run w/ PYTHON3= path to python v3.2+
 	"$(PYTHON3)" -c 'import imageio, requests' \
 		|| "$(PYTHON3)" -m pip install --user imageio requests -U
 .PHONY: sane
+
+data: sane
+	"$(PYTHON3)" jhu.py data
+	#find data -name '*.png' -print0 | xargs -0 open
 
 jhu.gif: data
 	#find data -name '*.png' -print0 | xargs -0 open
