@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-	<title>For 2020-08-08</title>
+	<title>For 2020-08-08 vs. 2020-08-15</title>
 </head>
 <body>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -8,85 +8,31 @@
 	<p>
 		<a href="https://coronavirus.jhu.edu/testing/testing-positivity">Data Source</a>
 	</p>
-	<div id="regions_div" style="width: 900px; height: 500px;"></div>
-	<p>
-		<a href="..">Up to Parent</a>
-	</p>
-<script>
-
-      google.charts.load('current', {
-        'packages':['geochart'],
-        // Note: you will need to get a mapsApiKey for your project.
-        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-      });
-      google.charts.setOnLoadCallback(drawRegionsMap);
-
-      function drawRegionsMap() {
-        var data = google.visualization.arrayToDataTable([
-          ['City', '% positive tests'],
-['Vermont',0.52],
-['Maine',0.62],
-['Connecticut',0.72],
-['New York',0.96],
-['New Jersey',1.53],
-['Alaska',1.71],
-['New Hampshire',1.95],
-['Michigan',2.55],
-['New Mexico',2.63],
-['Massachusetts',2.74],
-['West Virginia',2.76],
-['Illinois',4.10],
-['Montana',4.45],
-['Delaware',4.78],
-['Ohio',4.86],
-['Mississippi',20.45],
-['Florida',17.74],
-['Alabama',17.64],
-['Nevada',17.37],
-['Texas',16.20],
-['Idaho',16.09],
-['Arizona',15.53],
-['Washington',13.68],
-['Georgia',12.69],
-['South Carolina',12.25],
-['Kansas',11.77],
-['Arkansas',11.50],
-['Missouri',10.70],
-['Utah',10.53],
-['Oklahoma',9.58],
-['Iowa',9.57],
-['Nebraska',8.96],
-['Indiana',8.75],
-['Tennessee',8.63],
-['South Dakota',8.56],
-['Wyoming',8.24],
-['Virginia',8.16],
-['Louisiana',7.66],
-['North Dakota',7.31],
-['Colorado',7.18],
-['Kentucky',6.73],
-['Hawaii',6.65],
-['Oregon',6.40],
-['Minnesota',6.22],
-['Wisconsin',6.16],
-['Rhode Island',5.99],
-['North Carolina',5.84],
-['Maryland',5.71],
-['California',5.70],
-['Pennsylvania',5.23],
-        ]);
-
-        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-
-        chart.draw(data, {
-          region: 'US',
-    		  resolution: 'provinces',
-		      displayMode: 'regions',
-          colorAxis: {colors: ['green', 'red']},
-          sizeAxis: { minValue: 0, maxValue: 100 },
-        });
-      }
-
-</script>
+	<main id="charts">
+		<div id="s2020-08-15">
+			<h2>2020-08-15</h2>
+			<p>
+				<button onClick="javascript:charts.hide('2020-08-15');">Hide</button>
+				<span>Note: data for WA was 100% (assumed invalid)</span>
+			</p>
+			<div id="r2020-08-15" style="width: 900px; height: 500px;"></div>
+		</div>
+		<div id="s2020-08-08">
+			<h2>2020-08-08</h2>
+			<p>
+				<button onClick="javascript:charts.hide('2020-08-08');">Hide</button>
+			</p>
+			<div id="r2020-08-08" style="width: 900px; height: 500px;"></div>
+		</div>
+	</main>
+	<footer>
+		<p>
+			<button onClick="javascript:charts.hideAll();">Hide All</button>
+			<button onClick="javascript:charts.showAll();">Show All</button>
+		</p>
+		<p>
+			<a href="..">Up to Parent</a>
+		</p>
+	</footer>
+<script type="text/javascript" src="./charts.js"></script>
 </body>
