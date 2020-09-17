@@ -181,7 +181,7 @@ google.charts.load('current', {
 google.charts.setOnLoadCallback(() => {
 	const options = {
 		colorAxis: {
-			colors: ['green', 'red'],
+			colors: ['#719949', '#ff9e1b'],
 		},
 		displayMode: 'regions',
 		region: 'US',
