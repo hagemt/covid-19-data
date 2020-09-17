@@ -115,6 +115,63 @@ const version2 = {
 	],
 }
 
+const version3 = {
+	date: '2020-09-16',
+	rows: [
+		['State', '% positive tests'],
+['Alabama',16.15],
+['Alaska',3.81],
+['Arizona',6.92],
+['Arkansas',5.20],
+['California',3.35],
+['Colorado',3.40],
+['Connecticut',1.20],
+['Delaware',8.14],
+['Florida',12.34],
+['Georgia',9.79],
+['Hawaii',3.29],
+['Idaho',16.38],
+['Illinois',3.62],
+['Indiana',6.21],
+['Iowa',13.51],
+['Kansas',13.76],
+['Kentucky',3.45],
+['Louisiana',3.98],
+['Maine',0.61],
+['Maryland',6.44],
+['Massachusetts',0.77],
+['Michigan',2.92],
+['Minnesota',8.14],
+['Mississippi',15.84],
+['Missouri',10.88],
+['Montana',4.19],
+['Nebraska',9.40],
+['Nevada',8.61],
+['New Hampshire',2.68],
+['New Jersey',1.93],
+['New Mexico',2.22],
+['New York',0.95],
+['North Carolina',4.52],
+['North Dakota',5.85],
+['Ohio',3.57],
+['Oklahoma',6.85],
+['Oregon',4.92],
+['Pennsylvania',6.77],
+['Rhode Island',1.10],
+['South Carolina',12.48],
+['South Dakota',16.91],
+// why is Texas is absent?
+['Tennessee',5.76],
+['Utah',12.03],
+['Vermont',1.00],
+['Virginia',6.96],
+['Washington',3.15],
+['West Virginia',4.72],
+['Wisconsin',14.56],
+['Wyoming',4.05],
+	],
+}
+
 // https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
 google.charts.load('current', {
 	mapsApiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY',
@@ -135,7 +192,7 @@ google.charts.setOnLoadCallback(() => {
 		},
 	}
 
-	for (const { date, rows } of [version1, version2]) {
+	for (const { date, rows } of [version1, version2, version3]) {
 		const div = document.getElementById('r' + date);
 		const chart = new google.visualization.GeoChart(div);
 		const data = google.visualization.arrayToDataTable(rows);
@@ -147,6 +204,9 @@ window.charts = Object.freeze({
 	hide: (date) => {
 		const charts = document.getElementById('charts');
 		const chart = document.getElementById('s' + date);
+		if (chart.style.display === 'none') {
+			return false;
+		}
 
 		const btn = document.createElement('button');
 		btn.innerHTML = 'Show ' + date;
@@ -155,19 +215,20 @@ window.charts = Object.freeze({
 			charts.removeChild(btn);
 			return false;
 		}
-		btn.style.display = 'block';
 
+		btn.style.display = 'block';
 		chart.style.display = 'none';
 		charts.appendChild(btn);
 		return false;
 	},
 	hideAll: () => {
-		for (const { date } of [version1, version2]) {
+		for (const { date } of [version1, version2, version3]) {
 			window.charts.hide(date);
 		}
 		return false;
 	},
 	showAll: () => {
 		location.reload();
+		return false;
 	},
 })
