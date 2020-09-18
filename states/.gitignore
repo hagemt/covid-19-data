@@ -1,0 +1,4 @@
+*.jhu*
+*.pyc
+__pycache__
+*.swp
