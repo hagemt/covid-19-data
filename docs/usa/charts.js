@@ -229,8 +229,76 @@ const v4 = {
 	],
 }
 
-// https://coronavirus.jhu.edu/testing/testing-positivity
-const versions = Object.freeze([v1, v2, v3, v4])
+const v5 = {
+	date: '2020-09-18',
+	rows: [
+		['State', '% positive tests'],
+['Alabama',13.66],
+['Alaska',1.57],
+['Arizona',15.94],
+['Arkansas',8.20],
+['California',5.94],
+['Colorado',5.47],
+['Connecticut',3.96],
+['Delaware',7.25],
+['Florida',13.46],
+['Georgia',11.30],
+['Hawaii',4.14],
+['Idaho',12.78],
+['Illinois',5.53],
+['Indiana',8.54],
+['Iowa',10.98],
+['Kansas',10.91],
+['Kentucky',5.76],
+['Louisiana',7.57],
+['Maine',1.46],
+['Maryland',7.96],
+['Massachusetts',4.08],
+['Michigan',3.92],
+['Minnesota',6.84],
+['Mississippi',14.45],
+['Missouri',9.23],
+['Montana',3.19],
+['Nebraska',9.58],
+['Nevada',11.45],
+['New Hampshire',3.33],
+['New Jersey',6.15],
+['New Mexico',3.26],
+['New York',4.71],
+['North Carolina',7.05],
+['North Dakota',3.03],
+['Ohio',5.24],
+['Oklahoma',7.02],
+['Oregon',4.80],
+['Pennsylvania',8.20],
+['Rhode Island',3.62],
+['South Carolina',12.42],
+['South Dakota',10.23],
+['Tennessee',6.97],
+['Texas',13.20],
+['Utah',8.13],
+['Vermont',1.12],
+['Virginia',7.56],
+['Washington',4.83],
+['West Virginia',2.65],
+['Wisconsin',6.59],
+['Wyoming',4.95],
+	]
+}
+
+/*
+// update index.html w/ new YYYY-MM-DD div(s)
+const vN = {
+	date: 'YYYY-MM-DD',
+	rows: [
+		['State', '% positive tests'],
+// ...
+	]
+}
+*/
+
+// see: states/scrape.py (for data after v4 = 2020-09-18)
+const versions = Object.freeze([v1, v2, v3, v4, v5])
 
 // https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
 google.charts.load('current', {
