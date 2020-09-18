@@ -310,14 +310,12 @@ google.charts.setOnLoadCallback(() => {
 	const options = {
 		colorAxis: {
 			colors: ['#719949', '#ff9e1b'],
+			maxValue: 100,
+			minValue: 0,
 		},
 		displayMode: 'regions',
 		region: 'US',
 		resolution: 'provinces',
-		sizeAxis: {
-			maxValue: 100,
-			minValue: 0,
-		},
 	}
 
 	for (const { date, rows } of versions) {
