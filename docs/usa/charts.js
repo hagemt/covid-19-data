@@ -309,7 +309,7 @@ google.charts.setOnLoadCallback(() => {
 	const options = {
 		colorAxis: {
 			colors: ['#719949', '#ff9e1b'],
-			maxValue: 5,
+			maxValue: 10,
 			minValue: 0,
 		},
 		displayMode: 'regions',
