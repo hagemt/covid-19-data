@@ -1,7 +1,7 @@
 /* eslint-env browser */
 /* global google */
 
-const version1 = {
+const v1 = {
 	date: '2020-08-08',
 	rows: [
 		['State', '% positive tests'],
@@ -58,7 +58,7 @@ const version1 = {
 	],
 }
 
-const version2 = {
+const v2 = {
 	date: '2020-08-15',
 	rows: [
 		['State', '% positive tests'],
@@ -115,7 +115,7 @@ const version2 = {
 	],
 }
 
-const version3 = {
+const v3 = {
 	date: '2020-09-16',
 	rows: [
 		['State', '% positive tests'],
@@ -172,6 +172,66 @@ const version3 = {
 	],
 }
 
+const v4 = {
+	date: '2020-09-17',
+	rows: [
+		['State', '% positive tests'],
+['Alabama',15.74],
+['Alaska',3.46],
+['Arizona',5.68],
+['Arkansas',8.01],
+['California',3.57],
+['Colorado',3.47],
+['Connecticut',1.28],
+['Delaware',7.76],
+['Florida',12.47],
+['Georgia',9.32],
+['Hawaii',3.25],
+['Idaho',16.47],
+['Illinois',3.75],
+['Indiana',6.09],
+['Iowa',13.65],
+['Kansas',15.17],
+['Kentucky',3.20],
+['Louisiana',3.45],
+['Maine',0.64],
+['Maryland',6.40],
+['Massachusetts',0.77],
+['Michigan',2.73],
+['Minnesota',8.18],
+['Mississippi',14.85],
+['Missouri',10.82],
+['Montana',4.53],
+['Nebraska',10.56],
+['Nevada',8.07],
+['New Hampshire',2.66],
+['New Jersey',1.95],
+['New Mexico',2.30],
+['New York',0.94],
+['North Carolina',4.39],
+['North Dakota',5.63],
+['Ohio',3.45],
+['Oklahoma',8.58],
+['Oregon',5.07],
+['Pennsylvania',6.46],
+['Rhode Island',1.22],
+['South Carolina',12.43],
+['South Dakota',14.62],
+['Tennessee',5.97],
+['Texas',9.44],
+['Utah',13.06],
+['Vermont',0.94],
+['Virginia',6.65],
+['Washington',3.02],
+['West Virginia',4.63],
+['Wisconsin',14.70],
+['Wyoming',8.08],
+	],
+}
+
+// https://coronavirus.jhu.edu/testing/testing-positivity
+const versions = Object.freeze([v1, v2, v3, v4])
+
 // https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
 google.charts.load('current', {
 	mapsApiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY',
@@ -192,7 +252,7 @@ google.charts.setOnLoadCallback(() => {
 		},
 	}
 
-	for (const { date, rows } of [version1, version2, version3]) {
+	for (const { date, rows } of versions) {
 		const div = document.getElementById('r' + date);
 		const chart = new google.visualization.GeoChart(div);
 		const data = google.visualization.arrayToDataTable(rows);
@@ -222,7 +282,7 @@ window.charts = Object.freeze({
 		return false;
 	},
 	hideAll: () => {
-		for (const { date } of [version1, version2, version3]) {
+		for (const { date } of versions) {
 			window.charts.hide(date);
 		}
 		return false;
