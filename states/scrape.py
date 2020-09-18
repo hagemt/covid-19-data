@@ -53,7 +53,7 @@ def main():
     info, data = parse_soup(path=html_offline) # dated states
     sort = {'key': lambda columns: columns[1], 'reverse': True}
     for state_name, percent_positive, in sorted(data, **sort):
-        print("['%s':%.2f]," % (state_name, percent_positive))
+        print("['%s',%.2f]," % (state_name, percent_positive))
     print('//date on rows:', info, file=sys.stderr)
 
 if __name__ == '__main__':
