@@ -108,7 +108,6 @@ const v2 = {
 ['Utah',8.47],
 ['Vermont',0.82],
 ['Virginia',6.24],
-//['Washington',100.0], // WTF is this? (definitely a mistake)
 ['West Virginia',2.63],
 ['Wisconsin',7.51],
 ['Wyoming',5.44],
@@ -310,7 +309,7 @@ google.charts.setOnLoadCallback(() => {
 	const options = {
 		colorAxis: {
 			colors: ['#719949', '#ff9e1b'],
-			maxValue: 100,
+			maxValue: 5,
 			minValue: 0,
 		},
 		displayMode: 'regions',
