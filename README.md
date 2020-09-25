@@ -1,6 +1,6 @@
 # COVID-19 State Graph Scraper
 
-Pulls current data summary (images) for all fifty states from John Hopkins.
+Pulls current data summary (images) for all fifty states from Johns Hopkins.
 
 Example output from 2020-09-16 run:
 
