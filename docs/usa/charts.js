@@ -789,8 +789,7 @@ const vN = {
 */
 
 // see: states/scrape.py (for data after v4 = 2020-09-18)
-const versions = Object.freeze(
-	[v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13])
+const versions = Object.freeze([v1, v2, v3, v4, v5])
 
 // https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
 google.charts.load('current', {
