@@ -1,3 +1,9 @@
+# USA Data Grades
+
+Collected 2020-08-08 from: https://covidtracking.com/data
+
+https://covidtracking.com/about-data/state-grades
+
 A+ Arizona
 A+ Delaware
 A+ Indiana
@@ -48,6 +54,8 @@ C  Connecticut
 C  Hawaii
 C  Montana
 C  North Dakota
+
+## USA (on-states)
 
 A+ DC
 B  Guam
