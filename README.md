@@ -2,9 +2,11 @@
 
 Pulls current data summary (images) for all fifty states from Johns Hopkins.
 
-Example output from 2020-09-16 run:
+Example output from 2020-10-10 run:
 
-![Example Output](ymd/2020-09-16.gif)
+![Example Output](ymd/2020-10-10.gif)
+
+If you want to image parse or slow it down, try: https://ezgif.com/speed
 
 ## Development
 
