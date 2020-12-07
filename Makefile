@@ -17,7 +17,7 @@ help:
 
 demo: jhu.gif
 	# run w/ BROWSER= path to application that opens GIFs
-	open -a "$(BROWSER)" --args "file://$(shell pwd)/$<"
+	open -a "$(BROWSER)" --args "$(shell pwd)/$<"
 .PHONY: demo
 
 json:
